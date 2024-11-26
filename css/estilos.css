@@ -1,7 +1,36 @@
-p{
+p, li, ul{
     font-family: "Montserrat", sans-serif;
+    color: #f1e5cc;
 }
 
 h1, h2, h3{
     font-family: "Shrikhand", serif;
+    color: #f1e5cc;
 }
+
+#contenedor{
+    background-color: #cb162b;
+}
+
+/*Interacción en links del nav*/
+nav a:link {color: #cb162b;}
+nav a:hover {background-color: #8e0928;}
+nav a:visited {color: red;}
+
+#menucompu{
+    background-color: #f1e5cc;
+}
+
+#menucompu img{
+    height: 50px;
+    width: 90px;
+}
+
+@media (max-width:480px){
+
+    #menucompu{
+    display: none;
+    }    
+
+
+    }
