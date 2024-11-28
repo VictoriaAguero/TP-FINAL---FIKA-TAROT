@@ -21,25 +21,71 @@
     
     </head>
 
+    <div  id="contenedor">
      <body>
         <header>
             <nav>
-                <ul>
-                    <li> <a href="../index.html">HOME</a></li>
-                    <li> <a href="../tarot/index.html">TAROT</a></li>
-                    <li> <a href="../arcanos/index.html">ARCANOS</a></li>
-                    <li> <a href="../numerologia/index.html">NUMEROLOGÍA</a></li>
-                    <li> <a href="../tiradas/index.html">TIRADAS</a></li>
-                    <li> <a href="../juego/index.html">JUGUEMOS</a></li>
-                    <li> <a href="index.html">BLOG</a></li>
-                </ul>
+                <!-- MENÚ PARA CELULAR -->
+                <div id="menucelu" class="dropdown d-md-none">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Menú
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="../index.html">HOME</a></li>
+                        <li class="dropdown-item"><a href="../tarot/index.html">TAROT</a></li>
+                        <li class="dropdown-item"><a href="../arcanos/index.html">ARCANOS</a></li>
+                        <li class="dropdown-item"><a href="../numerologia/index.html">NUMEROLOGÍA</a></li>
+                        <li class="dropdown-item"><a href="../tiradas/index.html">TIRADAS</a></li>
+                        <li class="dropdown-item"><a href="../juego/index.html">JUGUEMOS</a></li>
+                        <li class="dropdown-item"><a href="index.html">BLOG</a></li>
+                    </ul>
+                </div>
+        
+                <!-- MENÚ PARA COMPUTADORA -->
+                <nav id="menucompu" class="navbar navbar-expand-lg border-bottom border-body">
+                    <div class="container">
+                        <a href="index.html">
+                            <img src="../img/logo.png" alt="Logo">
+                        </a>
+                        <ul class="navbar-nav justify-content-center flex-grow-1">
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active text-white" aria-current="page" href="../index.html">HOME</a>
+                            </li>
+        
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active text-white" href="../tarot/index.html">TAROT</a>
+                            </li>
+        
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active text-white" href="../arcanos/index.html">ARCANOS</a>
+                            </li>
+        
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active text-white" href="../numerologia/index.html">NUMEROLOGÍA</a>
+                            </li>
+        
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active text-white" href="../tiradas/index.html">TIRADAS</a>
+                            </li>
+        
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active text-white" href="../juego/index.html">JUGUEMOS</a>
+                            </li>
+        
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active text-white" href="index.html">BLOG</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </nav>
         </header>
-
+        
+        <div class="container-md">
         <main>
             <section>
                 <h2>Aprende tarot en nuestro blog</h2>
-                <p>¡Bienvenido!En esta sección encontrarás una selección de recursos, consejos y recomendaciones para profundizar en el mundo del tarot y 
+                <p>¡Bienvenido!Esta sección yo <a href="creadora.html">(Victoria)</a> la cree para que tengas a disposición una selección de recursos, consejos y recomendaciones para profundizar en el mundo del tarot y 
                     la espiritualidad. Acá podrás explorar desde técnicas avanzadas hasta herramientas que te ayudarán a fortalecer tu conexión con el universo y tu ser interior.
                      Ya sea que busques mejorar tu práctica o expandir tu conocimiento, nuestras guías te acompañarán en cada paso de tu viaje espiritual.</p>
             </section>
@@ -70,7 +116,12 @@
             </section>
         </main>
 
-        
+        <footer>
+            <address>¡Para enterarte de todo sobre el mundo de Fika Tarot, escribir a <a href="mailto:fikatarot.com">fikatarot.com</a>!</address>
+        </footer>
+
+       </div>
+    </div>
 
         <!--LINK A SCRIPT DE BOOTSTRAP Y PROPIO-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
