@@ -1,0 +1,51 @@
+p, li, ul{
+    font-family: "Montserrat", sans-serif;
+    color: #f1e5cc;
+}
+
+h1, h2, h3{
+    font-family: "Shrikhand", serif;
+    color: #f1e5cc;
+    margin-top: 0.5em;
+}
+
+#contenedor{
+    background-color: #cb162b;
+}
+
+/*Interacción en links del nav*/
+nav a:link {color: #cb162b;}
+nav a:hover {background-color: #8e0928;}
+nav a:visited {color: red;}
+
+#menucompu{
+    background-color: #f1e5cc;
+}
+
+#menucompu img{
+    height: 50px;
+    width: 90px;
+}
+
+/*Diseño footer*/
+footer{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    color: #f1e5cc;
+    padding: 1em;
+}
+
+
+footer a:link {color: #f1e5cc;}
+footer a:hover {color: #8e0928;}
+
+
+@media (max-width:480px){
+
+    #menucompu{
+    display: none;
+    }    
+
+
+    }
