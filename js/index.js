@@ -1,5 +1,4 @@
 //Código para el consejo del día de la página index general
-
 // Definir el mazo de Arcanos Mayores
 const mazo = [
     { url: "./img/Arcanos Mayores/elcarro.jpg", descripcion: "El Carro", consejo: "Mantén el control de tu destino y avanza con confianza." },
@@ -30,47 +29,20 @@ const mazo = [
 function mostrarCarta() {
     // Seleccionar una carta al azar del mazo
     let cartaAleatoria = mazo[Math.floor(Math.random() * mazo.length)];
-
     // Obtener el elemento de la carta
     let cartaImg = document.querySelector('#carta');
     
     // Mostrar la imagen de la carta seleccionada
     cartaImg.src = cartaAleatoria.url;
     cartaImg.alt = cartaAleatoria.descripcion; // Cambiar el texto alternativo con el nombre de la carta
-
     // Obtener el elemento donde mostrar la descripción y el consejo
     let descripcion = document.querySelector('#descripcion');
     descripcion.textContent = `${cartaAleatoria.descripcion}: ${cartaAleatoria.consejo}`; // Mostrar el consejo
 }
-
 // Añadir el evento click al botón para mostrar una carta
 document.querySelector('#botoncartadeldia').addEventListener('click', mostrarCarta);
 
-
 //MENU RESPONSIVE
 const menucelu = document.querySelector("#menucelu");
 const menucompu = document.querySelector("#menucompu");
-
-   iconomenu.addEventListener("click", () => {
-       //Creamos la funcion para ocultar o mostrar segun como esta 
-       if (menucelu.style.display === "block") {
-           menucompu.style.display = "none"; // Oculta el menú compu
-       } else {
-           menucompu.style.display = "block"; // Muestra el menú compu
-       }
-   });
-
-
-//MENU RESPONSIVE
-const menucelu = document.querySelector("#menucelu");
-const menucompu = document.querySelector("#menucompu");
-
-   iconomenu.addEventListener("click", () => {
-       //Creamos la funcion para ocultar o mostrar segun como esta 
-       if (menucelu.style.display === "block") {
-           menucompu.style.display = "none"; // Oculta el menú compu
-       } else {
-           menucompu.style.display = "block"; // Muestra el menú compu
-       }
-   });
-
+   
