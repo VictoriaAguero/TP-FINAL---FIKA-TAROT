@@ -30,7 +30,7 @@ function mostrarCarta() {
     // Seleccionar una carta al azar del mazo
     let cartaAleatoria = mazo[Math.floor(Math.random() * mazo.length)];
     // Obtener el elemento de la carta
-    let cartaImg = document.querySelector('#carta');
+    let cartaImg = document.querySelector('.carta');
     
     // Mostrar la imagen de la carta seleccionada
     cartaImg.src = cartaAleatoria.url;
@@ -40,7 +40,7 @@ function mostrarCarta() {
     descripcion.textContent = `${cartaAleatoria.descripcion}: ${cartaAleatoria.consejo}`; // Mostrar el consejo
 }
 // Añadir el evento click al botón para mostrar una carta
-document.querySelector('#botoncartadeldia').addEventListener('click', mostrarCarta);
+document.querySelector('.botoncartadeldia').addEventListener('click', mostrarCarta);
 
 //MENU RESPONSIVE
 const menucelu = document.querySelector("#menucelu");
