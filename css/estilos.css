@@ -1,51 +1,122 @@
-p, li, ul{
+/* Tipografía General */
+p, li, ul {
     font-family: "Montserrat", sans-serif;
     color: #f1e5cc;
 }
 
-h1, h2, h3{
+h1, h2, h3 {
     font-family: "Shrikhand", serif;
     color: #f1e5cc;
     margin-top: 0.5em;
 }
 
-#contenedor{
+/* Contenedor Principal */
+#contenedor {
     background-color: #cb162b;
 }
 
-/*Interacción en links del nav*/
-nav a:link {color: #cb162b;}
-nav a:hover {background-color: #8e0928;}
-nav a:visited {color: red;}
+/* Interacción en los enlaces de la navegación */
+nav a:link {
+    color: #cb162b;
+}
 
-#menucompu{
+nav a:hover {
+    background-color: #8e0928;
+}
+
+nav a:visited {
+    color: red;
+}
+
+/* Menú para Computadoras */
+#menucompu {
     background-color: #f1e5cc;
 }
 
-#menucompu img{
+#menucompu img {
     height: 50px;
     width: 90px;
 }
 
-/*Diseño footer*/
-footer{
-    display: flex; 
-    justify-content: center; 
+/* Estilo del Pie de Página */
+footer {
+    display: flex;
+    justify-content: center;
     align-items: center;
     color: #f1e5cc;
     padding: 1em;
 }
 
+footer a:link {
+    color: #f1e5cc;
+}
 
-footer a:link {color: #f1e5cc;}
-footer a:hover {color: #8e0928;}
+footer a:hover {
+    color: #8e0928;
+}
 
-
-@media (max-width:480px){
-
-    #menucompu{
+/* Sección del Juego Hecha con IA */
+#game {
     display: none;
-    }    
+    margin-top: 30px;
+}
 
+.card {
+    display: inline-block;
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    background-color: #ddd;
+    line-height: 200px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+#options {
+    margin-top: 20px;
+}
+
+#options button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid #8e0928;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#options button:hover {
+    background-color: #f1e5cc;
+    color: white;
+}
+
+#score, #time-left, #rounds-left {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#start-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #f1e5cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#start-button:hover {
+    background-color: #f1e5cc;
+}
+
+/* Para el celu*/
+@media (max-width: 480px) {
+    #menucompu {
+        display: none;
     }
+}
