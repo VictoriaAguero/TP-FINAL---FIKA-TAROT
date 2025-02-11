@@ -6,27 +6,29 @@ p, li, ul {
 
 h1, h2, h3 {
     font-family: "Shrikhand", serif;
-    color: #f1e5cc;
-    margin-top: 0.5em;
+    color: #f1e5cc !important;
+    margin-top: 0.5em !important; /*El important es una forma de priorizar que se muestre el estilo para evitar problemas con boostrap*/
 }
+
+/* Interacción en los enlaces de la navegación */
+nav a.nav-link:link {
+    color: #cb162b !important;  
+}
+
+nav a.nav-link:hover {
+    background-color: #8e0928 !important; 
+}
+
+nav a.nav-link:visited {
+    color: red !important; 
+}
+
 
 /* Contenedor Principal */
 #contenedor {
     background-color: #cb162b;
 }
 
-/* Interacción en los enlaces de la navegación */
-nav a:link {
-    color: #cb162b;
-}
-
-nav a:hover {
-    background-color: #8e0928;
-}
-
-nav a:visited {
-    color: red;
-}
 
 /* Menú para Computadoras */
 #menucompu {
@@ -34,8 +36,8 @@ nav a:visited {
 }
 
 #menucompu img {
-    height: 50px;
-    width: 90px;
+    height: 55px;
+    width: 75px;
 }
 
 /* Estilo del Pie de Página */
@@ -53,6 +55,18 @@ footer a:link {
 
 footer a:hover {
     color: #8e0928;
+}
+
+#espaciosextra{
+    margin-top: 1em;
+}
+
+/*Interacción en las imagenes*/
+
+.imginteraccion:hover{
+    transform: scale(1.02);
+    transition:2s;
+    /*Cada vez que se pase el mouse se agranda, en 2 segundos*/
 }
 
 /* Sección del Juego Hecha con IA */
@@ -94,7 +108,7 @@ footer a:hover {
 }
 
 #options button:hover {
-    background-color: #8e0928;
+    background-color: #f1e5cc;
     color: white;
 }
 
