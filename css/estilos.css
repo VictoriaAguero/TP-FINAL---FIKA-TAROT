@@ -132,6 +132,24 @@ footer a:hover {
     background-color: #f1e5cc;
 }
 
+/*Estilos para los testimonios en la página de tipos de enfoques*/
+.testimoniosbox {
+    background-color: #f1e5cc;
+    color: #cb162b;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .testimoniosbox p {
+    color: #cb162b;
+  }
+
+  .imgtestimonios {
+    border: 1em;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
 
 /* Para el celu*/
 @media (max-width: 480px) {
