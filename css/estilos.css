@@ -29,6 +29,24 @@ nav a.nav-link:visited {
     background-color: #cb162b;
 }
 
+/* Estilos para todos los botones en la página */
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid #cb162b;
+    background-color: #8e0928;
+    color: #f1e5cc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Estilo al pasar el cursor sobre cualquier botón */
+button:hover {
+    background-color: #f1e5cc;
+    color: #8e0928;
+}
 
 /* Menú para Computadoras */
 #menucompu {
@@ -98,14 +116,6 @@ footer a:hover {
 
 /* Estilos del botón */
 #start-button {
-    padding: 15px 30px;
-    font-size: 20px;
-    background-color: #f1e5cc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
     display: inline-block;  /* Hace que el botón se acomode al lado */
     margin-left: 10px;  /* Espacio entre el botón y las cartas */
 }
@@ -125,21 +135,6 @@ footer a:hover {
     margin-top: 20px;
 }
 
-#options button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 2px solid #8e0928;
-    background-color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-#options button:hover {
-    background-color: #f1e5cc;
-    color: white;
-}
 
 #score, #time-left, #rounds-left {
     font-size: 20px;
