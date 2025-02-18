@@ -42,6 +42,58 @@ function mostrarCarta() {
 // Añadir el evento click al botón para mostrar una carta
 document.querySelector('.botoncartadeldia').addEventListener('click', mostrarCarta);
 
+
+
+//Función para validar formulario
+document.querySelector("form").addEventListener("submit", function(event) {
+    let isValid = true;
+
+    // Validación de email
+    const email = document.getElementById("email").value;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(email)) {
+        alert("Por favor, ingresa un email válido.");
+        isValid = false;
+    }
+
+    // Validación de teléfono
+    const telefono = document.getElementById("telefono").value;
+    const telefonoRegex = /^[0-9]{10}$/;  // Asegura exactamente 10 dígitos
+    if (!telefonoRegex.test(telefono)) {
+        alert("El teléfono debe contener 10 dígitos.");
+        isValid = false;
+    }
+
+    // Validación de fecha (no permitir fechas pasadas)
+    const fecha = document.getElementById("fecha").value;
+    const fechaSeleccionada = new Date(fecha);
+    const hoy = new Date();
+    if (fechaSeleccionada < hoy) {
+        alert("La fecha seleccionada no puede ser pasada.");
+        isValid = false;
+    }
+
+    // Validación de tirada (es obligatorio)
+    const tirada = document.getElementById("tirada").value;
+    if (tirada === "") {
+        alert("Por favor, selecciona una tirada.");
+        isValid = false;
+    }
+
+    // Validación de cómo nos conociste (es obligatorio)
+    const fikatarot = document.getElementById("fikatarot").value;
+    if (fikatarot === "") {
+        alert("Por favor, selecciona cómo nos conociste.");
+        isValid = false;
+    }
+
+    // Si alguna validación falla, previene el envío del formulario
+    if (!isValid) {
+        event.preventDefault();
+    }
+});
+
+
 //MENU RESPONSIVE
 const menucelu = document.querySelector("#menucelu");
 const menucompu = document.querySelector("#menucompu");
