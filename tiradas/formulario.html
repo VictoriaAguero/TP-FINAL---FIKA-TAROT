@@ -95,52 +95,53 @@
             </ul>
             <p>Ahora sí ya puedes completar el formulario y ¡Nos vemos prontito para conocernos!</p>
             
-            <form target="_blank"  action="https://formsubmit.co/tarot.fika@gmail.com" method="POST" class="row g-3">
-
-                <div class="col-md-6" >
-                <label for="tirada" class="form-label">Elegí tu tirada:</label>
-                <select class="form-select" id="tirada" name="tirada">
-                    <option value="tirada1">Sesión 333</option>
-                    <option value="tirada2">Sesión vínculo</option>
-                    <option value="tirada3">Sesión completa</option>
-                    <option value="tirada4">Sesión empoderamiento</option>
-                </select>
-                </div>
-        
-                <div class="col-md-6">
-                <label class="form-label" for="fecha" class="form-label">Elegí la fecha:</label>
-                <input type="date" class="form-control"  id="fecha" name="fecha" required>
-                </div>
-            
-                <div class="col-md-6">
-                <label class="form-label" for="email">Email:</label>
-                <input class="form-control" id="email" type="email"  name="email" required>
-                </div>
-         
-                <div class="col-md-6">
-                <label  class="form-label" for="telefono" class="form-label">Teléfono:</label>
-                <input class="form-control" type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
-                </div>
-        
-                <div class="col-md-6" >
-                    <label for="fikatarot" class="form-label">¿Cómo nos conociste?</label>
+            <form target="_blank" action="https://formsubmit.co/tarot.fika@gmail.com" method="POST" class="row g-3">
+                <div class="row">
+                  <div class="col-md-6 mt-4">
+                    <label for="tirada" class="form-label">Elegí tu tirada:</label>
                     <select class="form-select" id="tirada" name="tirada">
-                        <option value="rrss">Redes sociales</option>
-                        <option value="recomendacion">Recomendación</option>
-                        <option value="flyer">Flyer en la calle</option>
-                        <option value="evento">Eventos - Ferias</option>
-                        <option value="otro">Otro...</option>
+                      <option value="tirada1">Sesión 333</option>
+                      <option value="tirada2">Sesión vínculo</option>
+                      <option value="tirada3">Sesión completa</option>
+                      <option value="tirada4">Sesión empoderamiento</option>
                     </select>
-                    </div>
-
-                    <div  class="col-md-6">
-                        <label for="extra" class="form-label">Alguna información extra que te gustaría decirme...</label>
-                        <textarea class="form-control" id="extra"></textarea>
-                      </div>   
-
-                <button type="submit">Enviar</button>
-            </form>
-
+                  </div>
+              
+                  <div class="col-md-6 mt-4">
+                    <label class="form-label" for="fecha">Elegí la fecha:</label>
+                    <input type="date" class="form-control" id="fecha" name="fecha" required>
+                  </div>
+              
+                  <div class="col-md-6 mt-4">
+                    <label class="form-label" for="email">Email:</label>
+                    <input class="form-control" id="email" type="email" name="email" required>
+                  </div>
+              
+                  <div class="col-md-6 mt-4">
+                    <label class="form-label" for="telefono">Teléfono:</label>
+                    <input class="form-control" type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
+                  </div>
+              
+                  <div class="col-md-6 mt-4">
+                    <label for="fikatarot" class="form-label">¿Cómo nos conociste?</label>
+                    <select class="form-select" id="fikatarot" name="fikatarot">
+                      <option value="rrss">Redes sociales</option>
+                      <option value="recomendacion">Recomendación</option>
+                      <option value="flyer">Flyer en la calle</option>
+                      <option value="evento">Eventos - Ferias</option>
+                      <option value="otro">Otro...</option>
+                    </select>
+                  </div>
+              
+                  <div class="col-md-6 mt-4">
+                    <label for="extra" class="form-label">Alguna información extra que te gustaría decirme...</label>
+                    <textarea class="form-control" id="extra"></textarea>
+                  </div>
+                </div>
+              
+                <button type="submit" class="col-12 mt-4">Enviar</button>
+              </form>
+              
         </main>
 
         <footer>

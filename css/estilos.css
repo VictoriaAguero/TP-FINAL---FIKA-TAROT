@@ -43,7 +43,7 @@ button {
 }
 
 /* Estilo al pasar el cursor sobre cualquier botón */
-button:hover {
+.botonjuego:hover {
     background-color: #f1e5cc;
     color: #8e0928;
 }
