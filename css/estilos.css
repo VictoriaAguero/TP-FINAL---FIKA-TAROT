@@ -1,5 +1,5 @@
 /* Tipografía General */
-p, li, ul {
+p, li, ul, label {
     font-family: "Montserrat", sans-serif;
     color: #f1e5cc;
 }
