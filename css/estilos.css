@@ -1,9 +1,10 @@
-/* Tipografía General */
+/* Tipografía General y links */
 
 p, li, ul, label {
     font-family: "Montserrat", sans-serif;
     color: #f1e5cc;
 }
+
 
 h1, h2, h3 {
     font-family: "Shrikhand", serif;
