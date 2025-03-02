@@ -78,11 +78,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #f1e5cc;
     padding: 1em;
+    margin-top: 2em;
 }
 
-footer a:link {
+.footercolor{
     color: #f1e5cc;
 }
 
@@ -180,6 +180,16 @@ footer a:hover {
 @media (max-width: 480px) {
     .logo{
         margin-left: 0px;
+    }
+
+    /*Hacer el menu responsive*/
+    .footerspan{
+        display: none;
+    }
+
+    .footercentro{
+        display: flex;
+        justify-content: center;
     }
 
 }
