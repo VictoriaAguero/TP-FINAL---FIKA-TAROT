@@ -93,8 +93,3 @@ document.querySelector("form").addEventListener("submit", function(event) {
     }
 });
 
-
-//MENU RESPONSIVE
-const menucelu = document.querySelector("#menucelu");
-const menucompu = document.querySelector("#menucompu");
-   

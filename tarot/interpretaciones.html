@@ -23,70 +23,84 @@
 
      <body>
         <div  id="contenedor">
-        <header>
-            <nav>
-                <!-- MENÚ PARA CELULAR -->
-                <div id="menucelu" class="dropdown d-md-none">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Menú
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a href="../index.html">HOME</a></li>
-                        <li class="dropdown-item"><a href="index.html">TAROT</a></li>
-                        <li class="dropdown-item"><a href="../arcanos/index.html">ARCANOS</a></li>
-                        <li class="dropdown-item"><a href="../numerologia/index.html">NUMEROLOGÍA</a></li>
-                        <li class="dropdown-item"><a href="../tiradas/index.html">TIRADAS</a></li>
-                        <li class="dropdown-item"><a href="../juego/index.html">JUGUEMOS</a></li>
-                        <li class="dropdown-item"><a href="../blog/index.html">BLOG</a></li>
-                    </ul>
-                </div>
-        
-                <!-- MENÚ PARA COMPUTADORA -->
-                <nav id="menucompu" class="navbar navbar-expand-lg border-bottom border-body">
-                    <div class="container">
-                        <a href="index.html">
-                            <img src="../img/logo.png" alt="Logo">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="index.html">
+                            <img src="../img/logo.png" alt="Logo" class="logo d-inline-block align-text-top">
                         </a>
-                        <ul class="navbar-nav justify-content-center flex-grow-1">
-                            <li class="nav-item mx-2">
-                                <a class="nav-link active text-white" aria-current="page" href="../index.html">HOME</a>
-                            </li>
-        
-                            <li class="nav-item mx-2">
-                                <a class="nav-link active text-white" href="index.html">TAROT</a>
-                            </li>
-        
-                            <li class="nav-item mx-2">
-                                <a class="nav-link active text-white" href="../arcanos/index.html">ARCANOS</a>
-                            </li>
-        
-                            <li class="nav-item mx-2">
-                                <a class="nav-link active text-white" href="../numerologia/index.html">NUMEROLOGÍA</a>
-                            </li>
-        
-                            <li class="nav-item mx-2">
-                                <a class="nav-link active text-white" href="../tiradas/index.html">TIRADAS</a>
-                            </li>
-        
-                            <li class="nav-item mx-2">
-                                <a class="nav-link active text-white" href="../juego/index.html">JUGUEMOS</a>
-                            </li>
-        
-                            <li class="nav-item mx-2">
-                                <a class="nav-link active text-white" href="../blog/index.html">BLOG</a>
-                            </li>
-                        </ul>
+            
+                        <!-- Botón hamburguesa para móviles -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+            
+                        <!-- Menú de navegación -->
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <!-- HOME -->
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link text-white" href="../index.html">HOME</a>
+                                </li>
+            
+                                <!-- TAROT -->
+                                <li class="nav-item dropdown mx-2">
+                                    <a class="nav-link text-white dropdown-toggle" href="index.html" id="navbarDropdownTarot" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        TAROT
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownTarot">
+                                        <li><a class="dropdown-item text-danger" href="index.html">¿Qué es?</a></li>
+                                        <li><a class="dropdown-item text-danger" href="interpretaciones.html">Interpretaciones</a></li>
+                                        <li><a class="dropdown-item text-danger" href="mazos.html">Mazos</a></li>
+                                    </ul>
+                                </li>
+            
+                                <!-- ARCANOS -->
+                                <li class="nav-item dropdown mx-2">
+                                    <a class="nav-link text-white dropdown-toggle" href="../arcanos/index.html" id="navbarDropdownArcanos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        ARCANOS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownArcanos">
+                                        <li><a class="dropdown-item text-danger" href="../arcanos/index.html">Arcanos del tarot</a></li>
+                                        <li><a class="dropdown-item text-danger" href="../arcanos/bastos.html">Bastos</a></li>
+                                        <li><a class="dropdown-item text-danger" href="../arcanos/oros.html">Oros</a></li>
+                                        <li><a class="dropdown-item text-danger" href="../arcanos/espadas.html">Espadas</a></li>
+                                        <li><a class="dropdown-item text-danger" href="../arcanos/copas.html">Copas</a></li>
+                                    </ul>
+                                </li>
+            
+                                <!-- NUMEROLOGÍA -->
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link text-white" href="../numerologia/index.html">NUMEROLOGÍA</a>
+                                </li>
+            
+                                <!-- TIRADAS -->
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link text-white" href="../tiradas/index.html">TIRADAS</a>
+                                </li>
+            
+                                <!-- JUGUEMOS -->
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link text-white" href="../juego/index.html">JUGUEMOS</a>
+                                </li>
+            
+                                <!-- BLOG -->
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link text-white" href="../blog/index.html">BLOG</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
-            </nav>
-        </header>
+            </header>        
         
         <div class="container-md">
         <main>
             <h1>Tipos de interpretaciones de tarot </h1>
-
+            <div class="row d-flex">
+            <div class="col-12 col-md-10"> 
             <p>Hoy en día, el tarot se utiliza en dos enfoques principales: introspectivo y predictivo.</p>
-
 
                     <ul>
                       <li><strong>Enfoque introspectivo: </strong>Este enfoque se centra en entender lo que el consultante está sintiendo o experimentando en el presente. El objetivo es mostrarle 
@@ -100,7 +114,11 @@
                           energía externa y los eventos que podrían ocurrir, en lugar de centrarse en los procesos internos del consultante.
                       </li>
                     </ul>
-
+            </div>
+            <div class="col-12 col-md-2 d-none d-md-block d-flex">
+                <img src="img/sticker5.jpg" alt="Sticker vino" class="d-block w-100">
+            </div>
+            </div>
 
             <p>En Fika Tarot nos enfocamos en el introspectivo, donde exploraremos cómo el tarot puede ser una herramienta poderosa para comprender mejor nuestro ser interior, sanar 
                 viejas heridas y guiar nuestra vida hacia un camino más consciente y enriquecedor.
