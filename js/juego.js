@@ -84,16 +84,17 @@ function startGame() {
   document.getElementById('start-button').style.display = 'none';
   document.getElementById('cartabase').style.display = 'none';
   document.getElementById('gameinfo').style.display = 'block';
+  
   // Restablece el puntaje, las rondas y el tiempo
   score = 0;
   roundsLeft = 20;
   timeLeft = 60;
-  
+
   // Muestra los valores iniciales en la interfaz
   document.getElementById('score').innerText = "Puntos: " + score;
   document.getElementById('time-left').innerText = "Tiempo: " + timeLeft;
   document.getElementById('rounds-left').innerText = "Rondas restantes: " + roundsLeft;
-  
+
   // Inicia el temporizador y comienza la primera ronda
   startTimer();
   nextRound();
@@ -116,17 +117,30 @@ function startTimer() {
 
 // Función para reiniciar el juego
 function resetGame() {
-  document.getElementById('game').style.display = 'none'; // Oculta el área del juego
-  document.getElementById('start-button').style.display = 'block'; // Muestra el botón de inicio
+  // Oculta el área del juego y muestra el área del inicio
+  document.getElementById('game').style.display = 'none';  // Oculta la interfaz de juego
+  document.getElementById('start-button').style.display = 'block';  // Muestra el botón de inicio
+  
+  // Resetea la interfaz de juego
+  document.getElementById('score').innerText = "Puntos: 0";  // Resetea el puntaje
+  document.getElementById('time-left').innerText = "Tiempo: 60";  // Resetea el tiempo
+  document.getElementById('rounds-left').innerText = "Rondas restantes: 20";  // Resetea las rondas restantes
+  document.getElementById('cards').innerHTML = '';  // Limpia las cartas mostradas
+  document.getElementById('options').innerHTML = '';  // Limpia las opciones de respuesta
 }
 
 // Función para comenzar la siguiente ronda
 function nextRound() {
   if (roundsLeft <= 0) return; // Si ya no quedan rondas, termina la función
 
-  // Selecciona dos cartas aleatorias
+  // Selecciona la primera carta aleatoria
   const card1 = getRandomCard();
-  const card2 = getRandomCard();
+
+  // Selecciona la segunda carta aleatoria asegurando que sea diferente a la primera
+  let card2 = getRandomCard();
+  while (card2.url === card1.url) {
+      card2 = getRandomCard(); // Repite hasta que card2 sea diferente
+  }
 
   // Intenta encontrar una combinación válida de cartas que tenga un significado
   let correctMeaning = meanings[`${card1.descripcion} + ${card2.descripcion}`];
@@ -138,7 +152,6 @@ function nextRound() {
 
   // Si la combinación no tiene significado (lo cual no debería pasar), simplemente encuentra una combinación válida
   if (!correctMeaning) {
-      // Aquí puede poner una validación más compleja, pero por ahora seleccionamos una combinación válida aleatoria
       const validCombinations = Object.keys(meanings);
       const randomCombination = validCombinations[Math.floor(Math.random() * validCombinations.length)];
       correctMeaning = meanings[randomCombination];
@@ -195,4 +208,4 @@ function checkAnswer(selectedOption, correctMeaning) {
   
   // Pasa a la siguiente ronda
   nextRound();
-}
+} 

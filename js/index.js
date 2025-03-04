@@ -25,22 +25,34 @@ const mazo = [
     { url: "./img/Arcanos Mayores/losenamorados.jpg", descripcion: "Los Enamorados", consejo: "Es tiempo de tomar decisiones desde el corazón. La armonía en tus relaciones es clave." }
 ];
 
+
+// Crear objeto de audio para el sonido "brillos"
+const sonidoBrillos = new Audio("sonidos/brillos.mp3");
+sonidoBrillos.volume = 0.1; // Ajustar volumen de "brillos.mp3"
+
 // Función para mostrar una carta random
 function mostrarCarta() {
+    // Reproducir el sonido "brillos.mp3" una sola vez
+    sonidoBrillos.play();
+
     // Seleccionar una carta al azar del mazo
     let cartaAleatoria = mazo[Math.floor(Math.random() * mazo.length)];
+
     // Obtener el elemento de la carta
-    let cartaImg = document.querySelector('.carta');
+    let cartaImg = document.querySelector(".carta");
     
     // Mostrar la imagen de la carta seleccionada
     cartaImg.src = cartaAleatoria.url;
     cartaImg.alt = cartaAleatoria.descripcion; // Cambiar el texto alternativo con el nombre de la carta
+
     // Obtener el elemento donde mostrar la descripción y el consejo
-    let descripcion = document.querySelector('#descripcion');
+    let descripcion = document.querySelector("#descripcion");
     descripcion.textContent = `${cartaAleatoria.descripcion}: ${cartaAleatoria.consejo}`; // Mostrar el consejo
 }
+
 // Añadir el evento click al botón para mostrar una carta
-document.querySelector('.botoncartadeldia').addEventListener('click', mostrarCarta);
+document.querySelector(".botoncartadeldia").addEventListener("click", mostrarCarta);
+
 
 //Función para validar formulario
 document.querySelector("form").addEventListener("submit", function(event) {
@@ -90,3 +102,15 @@ document.querySelector("form").addEventListener("submit", function(event) {
         event.preventDefault();
     }
 });
+
+ // Crear un nuevo objeto Audio para el sonido de brillitos
+ const brillitosSonido = new Audio("sonidos/brillos.mp3");
+ brillitosSonido.volume = 0.5; // Ajustar volumen (0.0 a 1.0)
+
+ // Obtener el elemento de la carta del día
+ const cartaDelDia = document.querySelector('.botoncartadeldia');
+
+ // Añadir un event listener al hacer clic en la carta
+ cartaDelDia.addEventListener('click', function() {
+     brillitosSonido.play(); // Reproducir el sonido de brillitos al hacer clic
+ });
