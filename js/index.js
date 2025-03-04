@@ -42,8 +42,6 @@ function mostrarCarta() {
 // Añadir el evento click al botón para mostrar una carta
 document.querySelector('.botoncartadeldia').addEventListener('click', mostrarCarta);
 
-
-
 //Función para validar formulario
 document.querySelector("form").addEventListener("submit", function(event) {
     let isValid = true;

@@ -106,15 +106,23 @@ footer a:hover {
 /* Estilos para el contenedor de las cartas y el botón */
 #cartabase {
     display: flex;
-    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
-    gap: 10px; /* Espacio entre las cartas, el signo + y el botón */
-    margin-bottom: 20px; /* Separación de abajo */
+    flex-direction: row; /* Acomoda las cartas y el botón en fila */
+    align-items: center;
+    justify-content: center; /* Centra el contenido */
+    gap: 20px; /* Espacio entre las cartas y el botón */
+    margin-bottom: 30px;
 }
 
-/* Estilos de las cartas */
+.cards-container {
+    display: flex;
+    justify-content: center; /* Alinea las cartas horizontalmente */
+    align-items: center;
+    gap: 10px; /* Espacio entre las cartas y el signo + */
+}
+
 .card {
-    width: 150px;  /* Tamaño original de las cartas */
-    height: 200px;  /* Tamaño original de las cartas */
+    width: 150px;
+    height: 200px;
     background-color: #8e0928;
     display: flex;
     justify-content: center;
@@ -123,37 +131,15 @@ footer a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos del signo + */
 #signomas {
-    width: 50px;  /* Tamaño del signo más */
-    height: 50px;  /* Tamaño del signo más */
+    width: 50px;
+    height: 50px;
 }
 
-/* Estilos del botón */
-#start-button {
-    display: inline-block;  /* Hace que el botón se acomode al lado */
-    margin-left: 10px;  /* Espacio entre el botón y las cartas */
-}
 
-/* Efecto hover del botón */
-#start-button:hover {
-    background-color: #f1e5cc;
-}
-
-/* Estilos del juego */
-#game {
+/* Al inicio del juego no se debe mostrar el contador */
+.game-info {
     display: none;
-    margin-top: 30px;
-}
-
-#options {
-    margin-top: 20px;
-}
-
-
-#score, #time-left, #rounds-left {
-    font-size: 20px;
-    margin-top: 10px;
 }
 
 
