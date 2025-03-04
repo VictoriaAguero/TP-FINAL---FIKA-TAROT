@@ -83,7 +83,7 @@ function startGame() {
   document.getElementById('game').style.display = 'block';
   document.getElementById('start-button').style.display = 'none';
   document.getElementById('cartabase').style.display = 'none';
-  
+  document.getElementById('gameinfo').style.display = 'block';
   // Restablece el puntaje, las rondas y el tiempo
   score = 0;
   roundsLeft = 20;

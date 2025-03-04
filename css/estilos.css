@@ -132,9 +132,8 @@ footer a:hover {
 
 .cards-container {
     display: flex;
-    justify-content: center; /* Alinea las cartas horizontalmente */
-    align-items: center;
-    gap: 10px; /* Espacio entre las cartas y el signo + */
+    flex-wrap: wrap; /* Esto permite que las cartas se ajusten cuando no hay suficiente espacio */
+    gap: 50px; /* Espacio entre las cartas*/
 }
 
 .card {
@@ -142,8 +141,6 @@ footer a:hover {
     height: 200px;
     background-color: #8e0928;
     display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -151,12 +148,21 @@ footer a:hover {
 #signomas {
     width: 50px;
     height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
 /* Al inicio del juego no se debe mostrar el contador */
-.game-info {
+#gameinfo {
     display: none;
+}
+
+#game {
+    display: flex;
+    flex-wrap: wrap; /* Esto permite que las columnas se ajusten si hay poco espacio */
 }
 
 
