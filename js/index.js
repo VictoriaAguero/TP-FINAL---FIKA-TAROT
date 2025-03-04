@@ -53,7 +53,6 @@ function mostrarCarta() {
 // Añadir el evento click al botón para mostrar una carta
 document.querySelector(".botoncartadeldia").addEventListener("click", mostrarCarta);
 
-
 //Función para validar formulario
 document.querySelector("form").addEventListener("submit", function(event) {
     let isValid = true;
@@ -114,3 +113,4 @@ document.querySelector("form").addEventListener("submit", function(event) {
  cartaDelDia.addEventListener('click', function() {
      brillitosSonido.play(); // Reproducir el sonido de brillitos al hacer clic
  });
+
