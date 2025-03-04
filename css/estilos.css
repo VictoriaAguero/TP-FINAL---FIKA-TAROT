@@ -1,5 +1,18 @@
-/* Tipografía General y links */
 
+/*Oculto el banner, titulo y juego del celu*/
+#bannercelu {
+    display: none;
+}
+
+.tituloinicialcelu{
+    display: none;
+}
+
+#juegocelu{
+    display: none;
+}
+
+/* Tipografía General y links */
 p, li, ul, label {
     font-family: "Montserrat", sans-serif;
     color: #f1e5cc;
@@ -10,6 +23,10 @@ h1, h2, h3 {
     font-family: "Shrikhand", serif;
     color: #f1e5cc !important;
     margin-top: 0.5em !important; /*El important es una forma de priorizar que se muestre el estilo para evitar problemas con boostrap*/
+}
+
+h4{
+    font-family: "Shrikhand", serif;
 }
 
 /*ESTILO MENÚ DE NAVEGACIÓN*/
@@ -164,6 +181,39 @@ footer a:hover {
 
 /* Para el celu*/
 @media (max-width: 480px) {
+    
+    /*Oculto el banner de la compu para mostrar el del celu*/
+    #bannercompu{
+        display: none;
+    }
+
+    #bannercelu{
+        display: block;
+    }
+
+    /*Ajusto el tamaño de los textos*/
+    p, ul {
+        font-size: 12px;
+    }
+
+    /*Cambios en el titulo y juego según celu o compu*/
+    .tituloinicialcompu{
+        display: none;
+    }
+
+    .tituloinicialcelu{
+        display: block;
+    }
+
+    #juegocompu{
+        display: none;
+    }
+
+    #juegocelu{
+        display: block;
+    }
+
+    /*Ajusto el margen del logo*/
     .logo{
         margin-left: 0px;
     }
@@ -176,6 +226,14 @@ footer a:hover {
     .footercentro{
         display: flex;
         justify-content: center;
+    }
+
+    /*Achico el botón para que se vea correctamente en el celu*/
+    .botoncelu{
+        font-size: 10px;
+        border: 1px;
+        margin: 5px;
+        padding: 5px 10px;
     }
 
 }
