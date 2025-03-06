@@ -1,3 +1,26 @@
+document.addEventListener("DOMContentLoaded", function () {
+    // Seleccionamos el elemento donde aplicaremos el efecto
+    const element = document.getElementById('typewriter-text');
+
+    // Creamos una instancia del efecto
+    const typewriter = new Typewriter(element, {
+        loop: true,          // Para que el texto se repita
+        delay: 75,           // Ajusta la velocidad de escritura
+        deleteSpeed: 50,     // Ajusta la velocidad de borrado
+    });
+
+    // Definimos el texto que se escribirá
+    typewriter.typeString('¡Hace Click en la carta para recibir tu conejo!')
+        .pauseFor(1500)  // Pausa de 1.5 segundos
+        .deleteAll()     // Elimina todo el texto
+        .typeString('Pero ojo porque tenes que confiar en el primero que te toca, no existen las coincidencias pero si existe la sincronicidad...')
+        .pauseFor(1500)
+        .deleteAll()
+        .start();  // Inicia el efecto
+});
+
+
+
 //Código para el consejo del día de la página index general
 // Definir el mazo de Arcanos Mayores
 const mazo = [
@@ -113,4 +136,3 @@ document.querySelector("form").addEventListener("submit", function(event) {
  cartaDelDia.addEventListener('click', function() {
      brillitosSonido.play(); // Reproducir el sonido de brillitos al hacer clic
  });
-
