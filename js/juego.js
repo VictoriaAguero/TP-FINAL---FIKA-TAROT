@@ -119,7 +119,8 @@ function startTimer() {
 function resetGame() {
   // Oculta el área del juego y muestra el área del inicio
   document.getElementById('game').style.display = 'none';  // Oculta la interfaz de juego
-  document.getElementById('start-button').style.display = 'block';  // Muestra el botón de inicio
+  document.getElementById('cartabase').style.display = 'block';  // Muestra el inicio
+  document.getElementById('start-button').style.display = 'block';  // Muestra el boton
   
   // Resetea la interfaz de juego
   document.getElementById('score').innerText = "Puntos: 0";  // Resetea el puntaje
