@@ -78,55 +78,6 @@ function mostrarCarta() {
 // Añadir el evento click al botón para mostrar una carta
 document.querySelector(".botoncartadeldia").addEventListener("click", mostrarCarta);
 
-//Función para validar formulario
-document.querySelector("form").addEventListener("submit", function(event) {
-    let isValid = true;
-
-    // Validación de email
-    const email = document.getElementById("email").value;
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!emailRegex.test(email)) {
-        alert("Por favor, ingresa un email válido.");
-        isValid = false;
-    }
-
-    // Validación de teléfono
-    const telefono = document.getElementById("telefono").value;
-    const telefonoRegex = /^[0-9]{10}$/;  // Asegura exactamente 10 dígitos
-    if (!telefonoRegex.test(telefono)) {
-        alert("El teléfono debe contener 10 dígitos.");
-        isValid = false;
-    }
-
-    // Validación de fecha (no permitir fechas pasadas)
-    const fecha = document.getElementById("fecha").value;
-    const fechaSeleccionada = new Date(fecha);
-    const hoy = new Date();
-    if (fechaSeleccionada < hoy) {
-        alert("La fecha seleccionada no puede ser pasada.");
-        isValid = false;
-    }
-
-    // Validación de tirada (es obligatorio)
-    const tirada = document.getElementById("tirada").value;
-    if (tirada === "") {
-        alert("Por favor, selecciona una tirada.");
-        isValid = false;
-    }
-
-    // Validación de cómo nos conociste (es obligatorio)
-    const fikatarot = document.getElementById("fikatarot").value;
-    if (fikatarot === "") {
-        alert("Por favor, selecciona cómo nos conociste.");
-        isValid = false;
-    }
-
-    // Si alguna validación falla, previene el envío del formulario
-    if (!isValid) {
-        event.preventDefault();
-    }
-});
-
  // Crear un nuevo objeto Audio para el sonido de brillitos
  const brillitosSonido = new Audio("sonidos/brillos.mp3");
  brillitosSonido.volume = 0.5; // Ajustar volumen (0.0 a 1.0)
@@ -138,3 +89,57 @@ document.querySelector("form").addEventListener("submit", function(event) {
  cartaDelDia.addEventListener('click', function() {
      brillitosSonido.play(); // Reproducir el sonido de brillitos al hacer clic
  });
+
+
+ //VALIDAR FORMULARIO 
+ // Espera a que todo el contenido de la página se haya cargado antes de ejecutar el código
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Seleccionamos el formulario y los campos específicos por su id
+    const form = document.querySelector('form'); // El formulario en sí
+    const email = document.getElementById('email'); // El campo de email
+    const telefono = document.getElementById('telefono'); // El campo de teléfono
+    const fecha = document.getElementById('fecha'); // El campo de fecha
+    
+    // Agregamos un "escuchador" de eventos para cuando el formulario sea enviado
+    form.addEventListener('submit', function(event) {
+        let valid = true; // Variable para llevar el estado de la validación
+
+        // Validación del email: Verifica si el formato del email es correcto
+        if (!validateEmail(email.value)) {
+            valid = false; // Si la validación falla, cambiamos el estado a false
+            alert('Por favor ingrese un email válido'); // Mostramos un mensaje de alerta
+        }
+
+        // Validación del teléfono: Verifica si el teléfono tiene exactamente 10 dígitos
+        if (!validatePhone(telefono.value)) {
+            valid = false; // Si la validación falla, cambiamos el estado a false
+            alert('El teléfono debe tener 10 dígitos'); // Mostramos un mensaje de alerta
+        }
+
+        // Validación de la fecha: Verifica si se ha seleccionado una fecha
+        if (!fecha.value) {
+            valid = false; // Si la validación falla, cambiamos el estado a false
+            alert('Por favor seleccione una fecha'); // Mostramos un mensaje de alerta
+        }
+
+        // Si alguna validación ha fallado, evitamos que el formulario sea enviado
+        if (!valid) {
+            event.preventDefault(); // Detiene el envío del formulario
+        }
+    });
+
+    // Función para validar el formato de un email utilizando una expresión regular
+    function validateEmail(email) {
+        // Expresión regular que valida un formato de email estándar
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return emailRegex.test(email); // Retorna true si el formato es válido
+    }
+
+    // Función para validar el formato del teléfono utilizando una expresión regular
+    function validatePhone(phone) {
+        // Expresión regular que asegura que el teléfono tenga 10 dígitos numéricos
+        const phoneRegex = /^[0-9]{10}$/;
+        return phoneRegex.test(phone); // Retorna true si el teléfono tiene 10 dígitos
+    }
+});
