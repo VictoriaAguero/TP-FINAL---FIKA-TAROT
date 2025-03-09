@@ -1,5 +1,5 @@
 /*Oculto el banner, titulo y juego del celu*/
-#bannercelu {
+#banneriniciocelu {
     display: none;
 }
 
@@ -184,11 +184,11 @@ footer a:hover {
 @media (max-width: 480px) {
 
     /*Oculto el banner de la compu para mostrar el del celu*/
-    #bannercompu{
+    #banneriniciocompu{
         display: none;
     }
 
-    #bannercelu{
+    #banneriniciocelu{
         display: block;
     }
 
