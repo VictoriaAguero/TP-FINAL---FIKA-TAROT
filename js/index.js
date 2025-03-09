@@ -1,5 +1,4 @@
 //Librería JS - SAFY ME - Efector escribir
-
 document.addEventListener("DOMContentLoaded", function () {
     // Seleccionamos el elemento donde aplicaremos el efecto
     const element = document.getElementById('typewriter-text');
@@ -91,55 +90,58 @@ document.querySelector(".botoncartadeldia").addEventListener("click", mostrarCar
  });
 
 
- //VALIDAR FORMULARIO 
- // Espera a que todo el contenido de la página se haya cargado antes de ejecutar el código
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Seleccionamos el formulario y los campos específicos por su id
-    const form = document.querySelector('form'); // El formulario en sí
-    const email = document.getElementById('email'); // El campo de email
-    const telefono = document.getElementById('telefono'); // El campo de teléfono
-    const fecha = document.getElementById('fecha'); // El campo de fecha
-    
-    // Agregamos un "escuchador" de eventos para cuando el formulario sea enviado
-    form.addEventListener('submit', function(event) {
-        let valid = true; // Variable para llevar el estado de la validación
+ //VALIDACIÓN DEL FORMULARIO
+  // Se agrega un event listener para ejecutar la validación cuando se envíe el formulario
+  document.querySelector("#validarform").addEventListener("submit", function(event) {
+    // Inicializamos una variable para verificar si todo está válido
+    let isValid = true;
 
-        // Validación del email: Verifica si el formato del email es correcto
-        if (!validateEmail(email.value)) {
-            valid = false; // Si la validación falla, cambiamos el estado a false
-            alert('Por favor ingrese un email válido'); // Mostramos un mensaje de alerta
-        }
-
-        // Validación del teléfono: Verifica si el teléfono tiene exactamente 10 dígitos
-        if (!validatePhone(telefono.value)) {
-            valid = false; // Si la validación falla, cambiamos el estado a false
-            alert('El teléfono debe tener 10 dígitos'); // Mostramos un mensaje de alerta
-        }
-
-        // Validación de la fecha: Verifica si se ha seleccionado una fecha
-        if (!fecha.value) {
-            valid = false; // Si la validación falla, cambiamos el estado a false
-            alert('Por favor seleccione una fecha'); // Mostramos un mensaje de alerta
-        }
-
-        // Si alguna validación ha fallado, evitamos que el formulario sea enviado
-        if (!valid) {
-            event.preventDefault(); // Detiene el envío del formulario
-        }
-    });
-
-    // Función para validar el formato de un email utilizando una expresión regular
-    function validateEmail(email) {
-        // Expresión regular que valida un formato de email estándar
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        return emailRegex.test(email); // Retorna true si el formato es válido
+    // Validación del correo electrónico
+    const email = document.getElementById("email").value;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Expresión regular para validar el formato del correo
+    if (!emailRegex.test(email)) {
+        alert("Por favor, ingresa un email válido."); // Si no es válido, mostramos un mensaje de error
+        isValid = false; // Marcamos la validación como falsa
     }
 
-    // Función para validar el formato del teléfono utilizando una expresión regular
-    function validatePhone(phone) {
-        // Expresión regular que asegura que el teléfono tenga 10 dígitos numéricos
-        const phoneRegex = /^[0-9]{10}$/;
-        return phoneRegex.test(phone); // Retorna true si el teléfono tiene 10 dígitos
+    // Validación del teléfono
+    const telefono = document.getElementById("telefono").value;
+    const telefonoRegex = /^[0-9]{10}$/; // Expresión regular para validar un teléfono de 10 dígitos
+    if (!telefonoRegex.test(telefono)) {
+        alert("El teléfono debe contener 10 dígitos."); // Si no tiene 10 dígitos, mostramos un mensaje de error
+        isValid = false; // Marcamos la validación como falsa
+    }
+
+    // Validación de la fecha seleccionada
+    const fecha = document.getElementById("fecha").value;
+    const fechaSeleccionada = new Date(fecha); // Convertimos la fecha seleccionada a un objeto Date
+    const hoy = new Date(); // Obtenemos la fecha actual
+    if (fechaSeleccionada < hoy) {
+        alert("La fecha seleccionada no puede ser pasada."); // Si la fecha es anterior a hoy, mostramos un mensaje de error
+        isValid = false; // Marcamos la validación como falsa
+    }
+
+    // Validación de la tirada seleccionada
+    const tirada = document.getElementById("tirada").value;
+    if (tirada === "") {
+        alert("Por favor, selecciona una tirada."); // Si no se ha seleccionado una tirada, mostramos un mensaje de error
+        isValid = false; // Marcamos la validación como falsa
+    }
+
+    // Validación de cómo nos conoció el usuario
+    const fikatarot = document.getElementById("fikatarot").value;
+    if (fikatarot === "") {
+        alert("Por favor, selecciona cómo nos conociste."); // Si no se ha seleccionado una opción, mostramos un mensaje de error
+        isValid = false; // Marcamos la validación como falsa
+    }
+
+    // Si alguna validación falló, evitamos que el formulario se envíe
+    if (!isValid) {
+        event.preventDefault(); // Previene el envío del formulario
+    }else{
+
+    // Si la validación es exitosa, se muestra un mensaje de éxito
+    alert("¡Formulario enviado exitosamente!");  // Cartel de éxito
     }
 });
+ 
