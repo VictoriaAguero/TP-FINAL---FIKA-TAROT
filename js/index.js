@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Definimos el texto que se escribirá
-    typewriter.typeString('¡Hace Click en la carta para recibir tu conejo!')
+    typewriter.typeString('¡Hace Click en la carta para recibir tu consejo!')
         .pauseFor(1500)  // Pausa de 1.5 segundos
         .deleteAll()     // Elimina todo el texto
         .typeString('Pero ojo porque tenes que confiar en el primero que te toca, no existen las coincidencias pero si existe la sincronicidad...')
@@ -90,58 +90,67 @@ document.querySelector(".botoncartadeldia").addEventListener("click", mostrarCar
  });
 
 
- //VALIDACIÓN DEL FORMULARIO
-  // Se agrega un event listener para ejecutar la validación cuando se envíe el formulario
-  document.querySelector("#validarform").addEventListener("submit", function(event) {
-    // Inicializamos una variable para verificar si todo está válido
-    let isValid = true;
+// VALIDACIÓN DEL FORMULARIO
+document.querySelector("#validarform").addEventListener("submit", function(event) {
+    let isValid = true;  // Variable para controlar si el formulario es válido
 
-    // Validación del correo electrónico
-    const email = document.getElementById("email").value;
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Expresión regular para validar el formato del correo
-    if (!emailRegex.test(email)) {
-        alert("Por favor, ingresa un email válido."); // Si no es válido, mostramos un mensaje de error
-        isValid = false; // Marcamos la validación como falsa
+    // Función para validar el correo electrónico
+    function emailCorrecto(email) {
+        // Expresión regular para verificar que el correo tenga formato válido y dominios específicos
+        const patron = /^[a-zA-Z0-9._%+-]+@(gmail\.com|[a-zA-Z0-9.-]+\.(ar|com\.ar))$/;
+        return patron.test(email);  // Devuelve true si el correo cumple con el patrón
     }
 
-    // Validación del teléfono
+    // Obtener el valor del campo de email
+    const email = document.getElementById("email").value;  
+    // Si el email no es válido, muestra un alert y marca el formulario como no válido
+    if (!emailCorrecto(email)) {
+        alert("Por favor, ingresa un email válido con dominio permitido (gmail.com, .ar, .com.ar).");
+        isValid = false;
+    }
+
+    // Obtener el valor del campo de teléfono
     const telefono = document.getElementById("telefono").value;
-    const telefonoRegex = /^[0-9]{10}$/; // Expresión regular para validar un teléfono de 10 dígitos
+    // Expresión regular para validar que el teléfono tenga 10 dígitos
+    const telefonoRegex = /^[0-9]{10}$/;
+    // Si el teléfono no es válido, muestra un alert y marca el formulario como no válido
     if (!telefonoRegex.test(telefono)) {
-        alert("El teléfono debe contener 10 dígitos."); // Si no tiene 10 dígitos, mostramos un mensaje de error
-        isValid = false; // Marcamos la validación como falsa
+        alert("El teléfono debe contener 10 dígitos.");
+        isValid = false;
     }
 
-    // Validación de la fecha seleccionada
+    // Obtener el valor de la fecha seleccionada
     const fecha = document.getElementById("fecha").value;
-    const fechaSeleccionada = new Date(fecha); // Convertimos la fecha seleccionada a un objeto Date
-    const hoy = new Date(); // Obtenemos la fecha actual
+    const fechaSeleccionada = new Date(fecha);  // Convertir la fecha a un objeto Date
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);  // Resetear las horas para comparar solo las fechas
+    // Si la fecha seleccionada es anterior a la fecha actual, muestra un alert y marca el formulario como no válido
     if (fechaSeleccionada < hoy) {
-        alert("La fecha seleccionada no puede ser pasada."); // Si la fecha es anterior a hoy, mostramos un mensaje de error
-        isValid = false; // Marcamos la validación como falsa
+        alert("La fecha seleccionada no puede ser pasada.");
+        isValid = false;
     }
 
-    // Validación de la tirada seleccionada
+    // Obtener el valor de la tirada seleccionada
     const tirada = document.getElementById("tirada").value;
+    // Si no se ha seleccionado ninguna tirada, muestra un alert y marca el formulario como no válido
     if (tirada === "") {
-        alert("Por favor, selecciona una tirada."); // Si no se ha seleccionado una tirada, mostramos un mensaje de error
-        isValid = false; // Marcamos la validación como falsa
+        alert("Por favor, selecciona una tirada.");
+        isValid = false;
     }
 
-    // Validación de cómo nos conoció el usuario
+    // Obtener el valor de cómo nos conoció el usuario
     const fikatarot = document.getElementById("fikatarot").value;
+    // Si no se selecciono cómo nos conoció el usuario, muestra un alert y marca el formulario como no válido
     if (fikatarot === "") {
-        alert("Por favor, selecciona cómo nos conociste."); // Si no se ha seleccionado una opción, mostramos un mensaje de error
-        isValid = false; // Marcamos la validación como falsa
+        alert("Por favor, selecciona cómo nos conociste.");
+        isValid = false;
     }
 
-    // Si alguna validación falló, evitamos que el formulario se envíe
+    // Si alguna validación falla, prevenimos el envío del formulario
     if (!isValid) {
         event.preventDefault(); // Previene el envío del formulario
-    }else{
-
-    // Si la validación es exitosa, se muestra un mensaje de éxito
-    alert("¡Formulario enviado exitosamente!");  // Cartel de éxito
+    } else {
+        // Si todas las validaciones son correctas, muestra un mensaje de éxito
+        alert("¡Formulario enviado exitosamente!");
     }
 });
- 
