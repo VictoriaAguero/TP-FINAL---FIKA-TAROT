@@ -180,6 +180,19 @@ footer a:hover {
     margin-bottom: 15px;
   }
 
+  #gracias {
+    background-color: #9e0f1b;  /* Color más oscuro */
+    min-height: 100vh;  /* Asegura que el fondo cubra toda la pantalla */
+    margin: 2em; 
+    margin-left: 7em; 
+    margin-right: 7em;
+    display: flex;  /* Usamos flexbox para alinear los elementos */
+    flex-direction: column;  /* Coloca los elementos en una columna */
+    justify-content: center;  /* Centra los elementos verticalmente */
+    align-items: center;  /* Centra los elementos horizontalmente */
+    text-align: center;  /* Alinea el texto al centro */
+}
+
 /* Para el celu*/
 @media (max-width: 480px) {
 
@@ -235,6 +248,19 @@ footer a:hover {
         border: 2px;
         margin: 6px;
         padding: 6px 12px;
+    }
+
+    /*Cambios en la página de agradecimeinto en la versión celu*/
+    #gracias {
+        background-color: #9e0f1b;  /* Color más oscuro */
+        min-height: 100vh;  /* Asegura que el fondo cubra toda la pantalla */
+        margin: 1em; 
+        margin-left: 0.5em; 
+        margin-right: 0.5em;
+    }
+
+    #gracias p{
+        margin: 0.5em;
     }
 
 }
