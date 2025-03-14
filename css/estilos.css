@@ -58,6 +58,7 @@ nav a.nav-link:visited {
 /* Contenedor Principal */
 #contenedor {
     background-color: #cb162b;
+   min-height: calc(100vh - 138px);  /* Esto establece una altura mínima para el elemento igual a la altura de la ventana del navegador menos 138px, asegurando que el contenido ocupe el espacio restante después de restar esa cantidad. */
 }
 
 /* Estilos para todos los botones en la página */
