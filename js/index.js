@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Definimos el texto que se escribirá
-    typewriter.typeString('¡Hace Click en la carta para recibir tu consejo!')
+    typewriter.typeString('Pero ojo...')
         .pauseFor(1500)  // Pausa de 1.5 segundos
         .deleteAll()     // Elimina todo el texto
-        .typeString('Pero ojo porque tenes que confiar en el primero que te toca, no existen las coincidencias pero si existe la sincronicidad...')
+        .typeString('Tenes que confiar en el primero que te toca, no existen las coincidencias pero si existe la sincronicidad...')
         .pauseFor(1500)
         .deleteAll()
         .start();  // Inicia el efecto
