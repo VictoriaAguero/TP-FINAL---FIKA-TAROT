@@ -100,10 +100,11 @@
                 </ul>
                 <p>Ahora sí ya puedes completar el formulario y ¡Nos vemos prontito para conocernos!</p>
 
-
+                <!--Linkeo a formsubmit para que una vez validado en js se me envie a este mail que indico-->
                 <form target="_blank" action="https://formsubmit.co/tarot.fika@gmail.com" method="POST" class="row g-3" id="validarform">
                     <div class="row">
                         <div class="col-md-6 mt-4">
+                            <!--Esta línea de código es para que cuando se envie se redirija a la página de agradecimiento-->
                             <input type="hidden" name="_next" value="https://victoriaaguero.github.io/TP-FINAL---FIKA-TAROT/tiradas/formsvalido.html">
                             <label for="tirada" class="form-label">Elegí tu tirada:</label>
                             <select class="form-select" id="tirada" name="tirada" required>
@@ -138,6 +139,7 @@
                             </select>
                         </div>
                         <div class="col-md-6 mt-4">
+                            <!--Esta parte es opcional ya que quiza no todos quieren decir algo extra a lo que ya completaron-->
                             <label for="extra" class="form-label">Alguna información extra que te gustaría decirme...</label>
                             <textarea class="form-control" id="extra" name="extra"></textarea>
                         </div>

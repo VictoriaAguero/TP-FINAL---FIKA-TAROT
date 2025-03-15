@@ -1,4 +1,4 @@
-//Librería JS - SAFY ME - Efector escribir
+//Librería JS - SAFY ME - Efector escribir en la home page
 document.addEventListener("DOMContentLoaded", function () {
     // Seleccionamos el elemento donde aplicaremos el efecto
     const element = document.getElementById('typewriter-text');
